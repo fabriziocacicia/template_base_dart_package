@@ -40,6 +40,9 @@ jobs:
   dart_test_and_coverage:
     runs-on: ubuntu-latest
     steps:
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@v1.3
 
